@@ -117,7 +117,7 @@ lectio-engine/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/lectio-engine.git
+git clone https://github.com/KaitoKid730/lectio-engine.git
 cd lectio-engine
 
 # Install dependencies
