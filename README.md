@@ -1,75 +1,84 @@
 # Lectio Engine
 
-> **Enterprise AI Platform for Storybook Ingestion, Automated Curriculum & Lesson Planning, Presentation Generation, and FERPA/COPPA-Compliant Classroom Instruction.**
+> A full-stack AI lesson-planning platform: ingest children's storybooks, generate standards-aligned lesson plans and slide presentations, and run a privacy-conscious student portal.
 
 [![React 19](https://img.shields.io/badge/React-19.0.1-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4.1-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Express](https://img.shields.io/badge/Backend-Express%204-000000?logo=express&logoColor=white)](https://expressjs.com/)
-[![Google Gemini API](https://img.shields.io/badge/AI-Google%20Gemini%202.5%20%2F%20Flash-4285F4?logo=google&logoColor=white)](https://ai.google.dev/)
+[![Google Gemini API](https://img.shields.io/badge/AI-Google%20Gemini%202.5-4285F4?logo=google&logoColor=white)](https://ai.google.dev/)
 [![Drizzle ORM](https://img.shields.io/badge/ORM-Drizzle%20ORM-C5F74F?logo=drizzle&logoColor=black)](https://orm.drizzle.team/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+**Status:** portfolio project / working prototype. Runs locally; not deployed (it needs a Node backend and a Gemini API key). See [Status & Limitations](#status--limitations).
+
+---
+
+## Demo
+
+<!-- TODO: add a 60-90 second walkthrough GIF or video link, then 3-4 screenshots -->
+<!-- Suggested shots: storybook ingestion, lesson plan output, presentation mode, student portal quiz -->
 
 ---
 
 ## Overview
 
-**Lectio Engine** is an end-to-end pedagogical and instructional intelligence platform. It bridges the gap between children's literature, curriculum standards, and dynamic classroom presentation. Teachers, curriculum directors, and school administrators can ingest manuscripts or storybooks and automatically generate:
+Lectio Engine connects children's literature, curriculum standards and classroom presentation in one app. Teachers, curriculum leads and administrators can upload a manuscript or storybook and generate:
 
-- **Standards-Aligned Lesson Plans** (Common Core, NGSS, multi-tier differentiated instruction).
-- **Interactive Multimedia Slide Presentations** complete with PowerPoint motion presets, vocabulary flashcards, interactive quizzes, and `.pptx` export.
-- **Teacher Copilot Assistance** for real-time pedagogical prompts, misconception handling, and scaffolding.
-- **Curriculum QA & Compliance Auditing** to ensure age-appropriateness, sentiment safety, and pedagogical rigor.
-- **Visual Scene & Character Illustrations** via Google Gemini Image Generation.
-- **FERPA & COPPA-Compliant Student Portal** featuring pseudonymous identifiers, zero-PII student sessions, and classroom access codes.
+- **Standards-aligned lesson plans** (Common Core, NGSS, differentiated instruction tiers)
+- **Slide presentations** with motion presets, vocabulary flashcards, quizzes and `.pptx` export
+- **Teacher Copilot** suggestions for scaffolding questions, discussion hooks and misconception handling
+- **Curriculum QA reports** covering age-appropriateness, vocabulary load and content safety
+- **Scene and character illustrations** via Gemini image generation
+- **A student portal** built around pseudonymous accounts and classroom access codes, with no personal information stored
 
 ---
 
 ## Key Features
 
-### 1. Presentation Studio & Component-Driven Slides
-- **Component-Driven Slide Library**: Modular slide architectures (`HeroTitle`, `SplitScreen`, `CardGrid`, `Quote`, `InteractiveQuiz`, `Flashcard`, `ImageWithOverlay`, `Timeline`, `Comparison`, `DiscussionPrompt`).
-- **PowerPoint Motion Presets**: Native animations (`Fade`, `Pop`, `Slide`, `Zoom`, `Bounce`, `Reveal`, `Wipe`) with live timing controls.
-- **Theme & Palette Styling**: Dynamic gradients, typographic contrast, SVG shapes (`wave`, `blob`, `starburst`, `cloud`), and custom school district branding.
-- **Interactive In-Slide Activities**: Flip vocabulary flashcards and multiple-choice quizzes directly during live classroom projection.
-- **PowerPoint Export (`.pptx`)**: Direct client-side PowerPoint download powered by `pptxgenjs` with integrated fallback handlers.
-- **AI Design Reviewer**: Evaluates slide typography hierarchy, readability contrast, and content density against the curriculum design brief.
+### 1. Presentation Studio
+- **Component-driven slide library:** `HeroTitle`, `SplitScreen`, `CardGrid`, `Quote`, `InteractiveQuiz`, `Flashcard`, `ImageWithOverlay`, `Timeline`, `Comparison`, `DiscussionPrompt`.
+- **Motion presets:** `Fade`, `Pop`, `Slide`, `Zoom`, `Bounce`, `Reveal`, `Wipe`, with timing controls.
+- **Theming:** gradients, SVG shapes (`wave`, `blob`, `starburst`, `cloud`) and custom branding.
+- **Fullscreen presentation mode:** a teacher-side overlay for projecting slides in class, including flip flashcards and multiple-choice quizzes.
+- **PowerPoint export (`.pptx`):** client-side download using `pptxgenjs`.
+- **AI design reviewer:** checks typography hierarchy, contrast and content density against the design brief.
 
-### 2. Manuscript & Storybook Ingestion Pipeline
-- Upload and parse children's manuscripts and literature.
-- Automated readability scoring (Flesch-Kincaid, Lexile grade level estimation).
-- Multi-tier vocabulary extraction (Tier 1, Tier 2 Academic, Tier 3 Domain-Specific) with context sentences.
-- Automated chapter and thematic narrative segmentation.
+### 2. Storybook Ingestion
+- Upload and parse manuscripts.
+- Estimated readability scoring (Flesch-Kincaid and grade-level estimation).
+- Tiered vocabulary extraction (Tier 1, Tier 2 academic, Tier 3 domain-specific) with context sentences.
+- Chapter and thematic segmentation.
 
 ### 3. AI Lesson Planning Studio
-- Generates pedagogical lesson frameworks:
-  - **Anticipatory Set** & Hook
-  - **Direct Instruction** & Teacher Modeling
-  - **Guided Practice** & Collaborative Tasks
-  - **Independent Practice** & Extension Activities
-  - **Formative & Summative Assessments**
-  - **Differentiated Accommodations** (ELL, IEP/504, Gifted & Talented)
-- Standards alignment mapping (Common Core ELA, Math, NGSS).
+- Generates lesson frameworks: anticipatory set, direct instruction, guided practice, independent practice, formative and summative assessments, and differentiated accommodations (ELL, IEP/504, gifted).
+- Maps lessons to Common Core ELA, Math and NGSS standards.
 
 ### 4. Teacher Copilot
-- Context-aware instructional assistant.
-- Real-time generation of scaffolding questions, discussion hooks, and checks for understanding.
-- Instant handling of student misconceptions and differentiated explanation strategies.
+- Context-aware assistant that generates scaffolding questions, discussion hooks and checks for understanding on demand.
+- Suggests explanation strategies for common student misconceptions.
 
-### 5. Curriculum QA & Compliance Auditor
-- Automated quality assurance for curriculum leads.
-- Evaluates reading level fit, pedagogical alignment, vocabulary load, and content safety.
-- Generates structured remediation feedback before publishing to classrooms.
+### 5. Curriculum QA Auditor
+- Reviews reading-level fit, pedagogical alignment, vocabulary load and content safety.
+- Produces structured remediation feedback before material is published to a class.
 
 ### 6. Visual Illustration AI
-- Generates character sheets and scene illustrations using Google Gemini multimodal capabilities.
-- Consistent character styling prompts across scenes (watercolor, picture book, whimsical 3D, line art).
+- Generates character sheets and scene illustrations with Gemini multimodal models.
+- Supports consistent style prompts across scenes (watercolor, picture book, 3D, line art).
 
-### 7. Student Portal (COPPA / FERPA Compliant)
-- **Zero-PII Storage**: Pseudonymous identifiers for student accounts.
-- **Access Code & PIN Auth**: Simple 4-digit PIN login with classroom code (e.g. `READ2026`).
-- **Student-Safe Projection Middleware**: Server-side payload filtering prevents student endpoints from receiving teacher scripts, notes, or internal metadata.
-- Interactive student flashcards, vocabulary review, and comprehension badges.
+### 7. Student Portal
+- **Pseudonymous accounts:** students sign in with a classroom code and 4-digit PIN; no names, emails or contact details are stored.
+- **Student-safe projection middleware:** server-side filtering removes teacher scripts, notes, internal metadata, and quiz answer keys (`correctAnswerIndex`) and explanations from student responses, so answers can't be read in client network traffic.
+- Flashcards, vocabulary review and comprehension quizzes.
+
+---
+
+## Design Decisions
+
+- **Projection middleware over client-side hiding:** answer keys never leave the server for student sessions, rather than being hidden in the UI.
+- **Two-layer RBAC:** roles are enforced in Express (`requireRole`) and in the React router (`RoleGuard`).
+- **Embedded Postgres for zero-config setup:** PGlite runs in-process for quick local starts; set `DATABASE_URL` to use an external PostgreSQL instance.
+- **Component-driven slides:** each slide type is an isolated React component routed through `SlideRenderer`, so adding a layout doesn't touch the editor.
 
 ---
 
@@ -77,122 +86,130 @@
 
 ```
 lectio-engine/
-├── server.ts                    # Full-stack Express entry point with Vite middleware
+├── server.ts                    # Express entry point with Vite middleware
 ├── src/
-│   ├── components/              # React Views & UI components
-│   │   ├── PresentationStudioView.tsx   # Slide editor, inspector & animation preview
-│   │   ├── SlideRenderer.tsx            # Dynamic slide component router
-│   │   ├── slides/                      # Modular slide templates (HeroTitle, Quiz, etc.)
+│   ├── components/
+│   │   ├── PresentationStudioView.tsx   # Slide editor, inspector, animation preview
+│   │   ├── SlideRenderer.tsx            # Slide component router
+│   │   ├── slides/                      # Modular slide templates
 │   │   ├── BookProcessingView.tsx       # Storybook ingestion & readability
 │   │   ├── LessonAIView.tsx             # Lesson plan builder & standards mapper
-│   │   ├── TeacherCopilotView.tsx       # Real-time instructional assistant
-│   │   ├── QAAuditorView.tsx            # Standards QA & compliance auditor
+│   │   ├── TeacherCopilotView.tsx       # Instructional assistant
+│   │   ├── QAAuditorView.tsx            # Curriculum QA auditor
 │   │   ├── StudentPortalView.tsx        # Student reading & quiz interface
 │   │   ├── ImageAIView.tsx              # Gemini illustration generator
-│   │   └── AdminUserManagementView.tsx  # Multi-tenant RBAC & school management
+│   │   └── AdminUserManagementView.tsx  # RBAC & school management
 │   ├── controllers/             # Express API controllers
-│   ├── routes/                  # Modular REST API routes
-│   ├── middleware/              # Auth, RBAC, Rate-limit & Student Projection
-│   ├── services/                # Gemini AI services & PowerPoint generation
-│   ├── db/                      # Drizzle ORM schema, migrations, seed & PGlite
+│   ├── routes/                  # REST API routes
+│   ├── middleware/              # Auth, RBAC, rate limiting, student projection
+│   ├── services/                # Gemini services & PowerPoint generation
+│   ├── db/                      # Drizzle schema, migrations, seed, PGlite
 │   └── context/                 # AuthContext & ToastContext
 ```
 
-- **Frontend**: React 19, TypeScript, Tailwind CSS v4, Lucide React, Motion.
-- **Backend**: Node.js, Express 4, TypeScript (`tsx`), CORS, Cookie-Parser, Express-Rate-Limit.
-- **Database**: Drizzle ORM with embedded PostgreSQL (`@electric-sql/pglite`) for instant zero-config startup, or external PostgreSQL via `DATABASE_URL`.
-- **AI Engine**: `@google/genai` TypeScript SDK (Gemini 2.5 Flash / Pro).
-- **Presentation Export**: `pptxgenjs` & `html-to-image`.
+- **Frontend:** React 19, TypeScript, Tailwind CSS v4, Lucide React, Motion
+- **Backend:** Node.js, Express 4, TypeScript (`tsx`), CORS, cookie-parser, express-rate-limit
+- **Database:** Drizzle ORM with embedded PostgreSQL (`@electric-sql/pglite`) or external PostgreSQL via `DATABASE_URL`
+- **AI:** `@google/genai` SDK (Gemini 2.5 Flash / Pro)
+- **Export:** `pptxgenjs`, `html-to-image`
 
 ---
 
 ## Quick Start
 
-### 1. Prerequisites
-- **Node.js**: v18.0.0 or later (v20+ recommended)
-- **npm** or **pnpm**
-- **Google Gemini API Key**: Obtain a key from [Google AI Studio](https://aistudio.google.com/).
+### Prerequisites
+- Node.js 18+ (20+ recommended)
+- npm or pnpm
+- A Google Gemini API key from [Google AI Studio](https://aistudio.google.com/)
 
-### 2. Clone & Install
+### Install
 
 ```bash
-# Clone the repository
-git clone https://github.com/KaitoKid730/lectio-engine.git
-cd lectio-engine
-
-# Install dependencies
+git clone https://github.com/KaitoKid730/Lectio-Engine.git
+cd Lectio-Engine
 npm install
 ```
 
-### 3. Environment Variables
-Create a `.env` file in the project root (see `.env.example`):
+### Configure
 
 ```bash
 cp .env.example .env
 ```
 
-Fill in your configuration:
 ```env
-# Required for AI generation features
+# Required for AI features
 GEMINI_API_KEY="your_gemini_api_key_here"
 
-# Application Config
+# Application
 PORT=3000
 NODE_ENV="development"
-SESSION_SECRET="your_secure_session_secret"
+SESSION_SECRET="replace_with_a_long_random_string"
 CORS_ALLOWED_ORIGINS="http://localhost:3000"
 RATE_LIMIT_MAX=100
 
-# Database (Leave default for built-in in-memory PGlite PostgreSQL)
+# Optional: external PostgreSQL (defaults to embedded PGlite)
 # DATABASE_URL="postgres://postgres:postgres@localhost:5432/lectio_db"
 ```
 
-### 4. Run Development Server
+### Run
 
 ```bash
 npm run dev
 ```
 
-Open your browser at **`http://localhost:3000`**. The database seeds initial test users automatically on first run!
+Open `http://localhost:3000`. The database seeds demo users on first run.
 
 ---
 
-## Seed Accounts & Demo Credentials
+## Demo Accounts
 
-Use any of the pre-configured role accounts to test the application:
+> **Demo only.** These credentials are created by the seed script for local testing. Never reuse them or run the seed in a real deployment.
 
-| Role | Email / Access Code | Password / PIN | Permissions & Description |
+| Role | Email / Access Code | Password / PIN | Access |
 | :--- | :--- | :--- | :--- |
-| **Teacher** | `teacher@lectio.edu` | `password123` | Storybook ingestion, lesson plans, presentations, copilot |
-| **Curriculum Lead** | `curriculum@lectio.edu` | `password123` | Standards alignment, curriculum oversight, full studio |
-| **QA Auditor** | `qa@lectio.edu` | `password123` | Standards compliance auditor, quality reviews, feedback |
-| **Administrator** | `admin@lectio.edu` | `password123` | User management, district/school configuration, anonymization |
-| **Student** | Class Code: `READ2026` | PIN: `1234` | Zero-PII student portal, reading comprehension, interactive quizzes |
+| Teacher | `teacher@lectio.edu` | `password123` | Ingestion, lesson plans, presentations, copilot |
+| Curriculum Lead | `curriculum@lectio.edu` | `password123` | Standards alignment, full studio |
+| QA Auditor | `qa@lectio.edu` | `password123` | Quality reviews and feedback |
+| Administrator | `admin@lectio.edu` | `password123` | User and school management |
+| Student | Class code `READ2026` | PIN `1234` | Student portal, quizzes |
 
 ---
 
-## Available NPM Scripts
+## Scripts
 
 | Script | Command | Purpose |
 | :--- | :--- | :--- |
-| **Development** | `npm run dev` | Runs the full-stack app (`server.ts` with Vite HMR middleware via `tsx`) |
-| **Build** | `npm run build` | Builds Vite frontend bundle and compiles `server.ts` to `dist/server.cjs` |
-| **Production** | `npm start` | Launches the compiled production server (`node dist/server.cjs`) |
-| **Typecheck** | `npm run lint` | Runs `tsc --noEmit` to validate TypeScript types across client & server |
-| **Test** | `npm run test` | Runs unit and integration test suite via Vitest |
-| **Clean** | `npm run clean` | Cleans build artifacts (`dist/`, `server.js`) |
+| Development | `npm run dev` | Full-stack dev server (`server.ts` with Vite HMR) |
+| Build | `npm run build` | Builds the frontend and compiles `server.ts` to `dist/server.cjs` |
+| Production | `npm start` | Runs the compiled server |
+| Typecheck | `npm run lint` | `tsc --noEmit` across client and server |
+| Test | `npm run test` | Runs the Vitest unit tests |
+| Clean | `npm run clean` | Removes build artifacts |
 
 ---
 
-## Privacy, Security & Compliance
+## Privacy & Security Approach
 
-- **COPPA & FERPA Zero-PII**: Student records do not store full names, email addresses, or personal contact information. Accounts use random pseudonyms (e.g. `Student 101`) and authenticate strictly via Classroom Code + 4-digit PIN.
-- **Student-Safe Response Projection**: Server middleware strips all instructor notes, answer explanations, internal prompt metadata, and teacher scripts before delivering payloads to student sessions.
-- **RBAC (Role-Based Access Control)**: Enforced both at the Express route level (`requireRole`) and React router layer (`RoleGuard`).
-- **Rate Limiting & Security Headers**: Global IP rate limiting prevents brute force and token exhaustion.
+- **Data minimization:** student records contain no names, emails or contact details; accounts use pseudonyms (e.g. `Student 101`) and sign in with a classroom code and PIN.
+- **Server-side response filtering:** student endpoints never receive teacher scripts, instructor notes, internal prompt metadata, answer keys or explanations.
+- **Role-based access control** at both the API and router layers.
+- **Rate limiting** on all routes to limit brute-force and token-exhaustion attempts.
+
+This project follows privacy-minded design principles inspired by COPPA and FERPA. It has not been through a legal or compliance audit and should not be treated as certified compliant.
+
+---
+
+## Status & Limitations
+
+- Working prototype; runs locally and is not deployed.
+- The presentation mode is a single-screen teacher overlay. Slides are not synchronized to student devices.
+- Quizzes are served to students as authored; there is no adaptive or per-student quiz generation.
+- A 4-digit PIN suits a demo; a production system would need stronger student authentication.
+- AI-generated lesson content should be reviewed by an educator before classroom use.
+- The test suite covers unit tests only.
 
 ---
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+MIT. See [LICENSE](LICENSE).
