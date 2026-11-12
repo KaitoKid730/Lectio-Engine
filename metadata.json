@@ -1,0 +1,6 @@
+{
+  "name": "Lectio Engine",
+  "description": "Enterprise AI platform for storybook processing, automated lesson planning, teacher assistance, QA validation, and visual illustration generation with full specification docs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
