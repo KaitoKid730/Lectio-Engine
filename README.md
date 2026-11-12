@@ -16,8 +16,7 @@
 
 ## Demo
 
-<!-- TODO: add a 60-90 second walkthrough GIF or video link, then 3-4 screenshots -->
-<!-- Suggested shots: storybook ingestion, lesson plan output, presentation mode, student portal quiz -->
+<img width="1366" height="722" alt="image" src="https://github.com/user-attachments/assets/cf40885c-a658-49a2-9aff-58bbd9e4e9ae" />
 
 ---
 
